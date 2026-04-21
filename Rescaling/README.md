@@ -1,0 +1,1 @@
+This directory contains the templates and code for rescaling A_s to the massive neutrino case with default CLASS. (No Geff). Once you have determined your actual A_s, adjust the base template and copy to all 3 directories.
