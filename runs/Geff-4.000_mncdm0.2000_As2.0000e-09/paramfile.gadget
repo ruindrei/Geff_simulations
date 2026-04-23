@@ -1,0 +1,74 @@
+#  Relevant files
+
+InitCondFile = output/IC
+OutputDir = output
+TreeCoolFile = ../TREECOOL_fg20_eff_default.dat
+OutputList = ""
+
+# CPU time -limit
+
+TimeLimitCPU = 
+
+#  Characteristics of run
+TimeMax = 
+
+Omega0 = 0.3522988337  # Total matter density  (at z=0)
+OmegaLambda = 0.6476145504  # Cosmological constant (at z=0)
+OmegaBaryon = 0.0531689237  # Baryon density        (at z=0)
+HubbleParam = 0.64588  # Hubble paramater (may be used for power spec parameterization)
+
+CoolingOn = 1
+StarformationOn = 1
+RadiationOn = 1
+HydroOn = 1
+DensityIndependentSphOn = 1 # Should be on?
+MetalReturnOn = 0 ## Set this to 0 for PRIYA.
+BlackHoleOn = 1 ## also on. Defaults okay
+WindOn = 1 ## Should be on! Defaults okay
+StarformationCriterion = density #,h2?
+MassiveNuLinRespOn = 0 # For neutrinos.
+UVFluctuationFile =
+HIReionTemp = 
+
+MetalCoolFile = ../cooling_metal_UVB
+
+SnapshotWithFOF = 1 # Don't know if necessary
+FOFHaloLinkingLength = 0.2
+FOFHaloMinLength = 32
+
+MinGasTemp = 5.0
+
+
+#  Further parameters of SPH
+#  #Only kernel supported by fake_spectra
+DensityKernelType = cubic
+InitGasTemp = 270.
+MinGasTemp = 100
+
+# Remove He bubbles:
+QSOLightupOn=0 # Turn off if box size < 60 cMpc/h
+
+#----------------------BH Stuff-------------------------
+BlackHoleKineticOn = 1 # switch to kinetic feedback mode when the BH accretion rate is low
+
+BlackHoleFeedbackFactor = 0.05
+BlackHoleFeedbackMethod = spline | mass
+SeedBlackHoleMass = 5.0e-5
+BlackHoleAccretionFactor = 100.0
+BlackHoleNgbFactor = 2.0
+BlackHoleEddingtonFactor = 3.0
+
+MinFoFMassForNewSeed = 1
+TimeBetweenSeedingSearch = 1.03
+WriteBlackHoleDetails = 1
+
+#---------------------Wind-Stuff---------------
+WindModel = ofjt10 #,isotropic
+WindEfficiency = 2.0 # Default
+WindEnergyFraction = 1.0 # Default
+WindSigma0 = 353.0 #km/s Default
+WindSpeedFactor = 3.7 # Default
+
+WindFreeTravelLength = 20 # Default 
+WindFreeTravelDensFac = 0.1 # Not Default!
+

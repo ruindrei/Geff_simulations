@@ -1,0 +1,30 @@
+OutputDir = output # Directory for outputi
+FileBase = IC              # Base-filename of output files
+
+Ngrid =  # Size of cubic grid on which to create particles.
+
+BoxSize =    # Periodic box size of simulation
+
+Omega0 = 0.3522988337  # Total matter density  (at z=0)
+OmegaLambda = 0.6476145504  # Cosmological constant (at z=0)
+OmegaBaryon = 0.0531689237  # Baryon density        (at z=0)
+ProduceGas = 1         # 1 = Produce gas  0 = no gas, just DM.
+RadiationOn = 1         #Enable background radiation
+HubbleParam = 0.64588  # Hubble parameter (may be used for power spec parameterization)
+
+
+Redshift = 99        # Starting redshift
+
+DifferentTransferFunctions = 1
+
+# filename of tabulated input spectrum in Mpc/h units
+FileWithInputSpectrum = /Users/verag/repositories/mpgadget/Geff_simulations/runs/Geff-4.000_mncdm0.2000_As2.0000e-09/geff_00_z1_pk.dat
+FileWithTransferFunction = /Users/verag/repositories/mpgadget/Geff_simulations/runs/Geff-4.000_mncdm0.2000_As2.0000e-09/geff_00_z1_tk.dat
+
+PrimordialIndex = 0.9604
+PrimordialAmp = 2e-09
+Seed =    #  seed for IC-generator
+
+UnitLength_in_cm = 3.085678e21   # defines length unit of output (in cm/h) 
+UnitMass_in_g = 1.989e43      # defines mass unit of output (in g/cm)
+UnitVelocity_in_cm_per_s = 1e5 # defines velocity unit of output (in cm/sec)
