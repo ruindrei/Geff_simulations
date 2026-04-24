@@ -151,8 +151,8 @@ def run_class(class_path, ini_filename,log10_G_eff_nu):
     ## This should have run CLASS and generated our output .dat files. 
     ## Return the expected pk files based on the .ini filename for later usage.
     ## The way CLASS does it is: lcdm_geff_+str(log10_G_eff_nu) + "_" + "z1_pk.dat" for the pk files where z() changes based on the redshift. For this purpose we want z=99 so z1 is okay. 
-    pk_filename = f"geff_{log10_G_eff_nu}_z1_pk.dat"
-    tk_filename = f"geff_{log10_G_eff_nu}_z1_tk.dat"
+    pk_filename = f"geff_{log10_G_eff_nu}_00_z1_pk.dat"
+    tk_filename = f"geff_{log10_G_eff_nu}_00_z1_tk.dat"
     return pk_filename, tk_filename ## Saved for later in MP-Gadget. 
 
 
