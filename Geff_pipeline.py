@@ -210,8 +210,10 @@ def create_paramfile_gadget(pk_filename, tk_filename, A_s, n_s, h, m_ncdm, log10
     Omega_0  = Omega_b + Omega_cdm + m_ncdm / (93.14 * h**2) ## Assuming one massive neutrino species for simplicity.
 
     """ISSUE: BE CAREFUL WITH THE CALCULATION FOR 1 NEUTRINO ASK SIMEON!!!!!!!!!!!"""
-    Omega_ur = Omega_g * 0.22710731766023898 * (3.044 - 3.0396) ## For 3 massive neutrinos? Fix it for 1 massive neutrino. 
+    Omega_ur = Omega_g * 0.22710731766023898 * (3.046 - 1.013198221453432 * 2) ## For 3 massive neutrinos? Fix it for 1 massive neutrino. 
+    N_ur = Omega_ur / Omega_g / 0.22710731766023898 + 1.013198221453432* (3 - N_ncdm) 
 
+    print(f"Calculated Omega_ur: {Omega_ur}, N_ur: {N_ur}")
     Omega_Lambda = 1 - Omega_fld - Omega_0 - Omega_g - Omega_ur
     MNue = m_ncdm ## Assuming one massive neutrino species for simplicity.
 
@@ -370,8 +372,8 @@ if __name__ == "__main__":
     lcdm_planck_pk_file  = "planck_2018_pk.dat" ## This is the file with the Planck 2018 data for P(k).
 
     # Step 3: Plot Pk files compared to LCDM
-    #plot_pk_files_matching(geff_pk_file, lcdm_pk_file, args.log10_G_eff_nu)
-    #plot_pk_files_matching(geff_pk_file, lcdm_planck_pk_file, args.log10_G_eff_nu, scale=False)
+    plot_pk_files_matching(geff_pk_file, lcdm_pk_file, args.log10_G_eff_nu)
+    plot_pk_files_matching(geff_pk_file, lcdm_planck_pk_file, args.log10_G_eff_nu, scale=False)
 
     # Step 4: Create paramfiles for MP-Gadget
     create_paramfile_gadget(geff_pk_file, geff_tk_file, args.A_s, args.n_s, args.h, args.m_ncdm,args.log10_G_eff_nu)
