@@ -1,0 +1,89 @@
+
+InitCondFile = output/IC
+OutputDir = output
+TreeCoolFile = ../TREECOOL_fg20_eff_default.dat
+OutputList = "0.15625, 0.16666666666666666, 0.17857142857142858, 0.18518518518518517, 0.1923076923076923, 0.2, 0.20833333333333334, 0.2173913043478261, 0.22727272727272727, 0.23809523809523808, 0.25, 0.2631578947368421, 0.2777777777777778, 0.29411764705882354, 0.3125"
+
+# CPU time -limit
+
+TimeLimitCPU = 172700 ## 48 hrs - 100 seconds in seconds.
+
+#  Characteristics of run
+TimeMax = 0.3125
+
+Omega0 = 0.30795847750865046   # Total matter density  (at z=0)
+OmegaLambda = 0.6919880596214658    # Cosmological constant (at z=0)
+OmegaBaryon = 0.048442906574394456     # Baryon density        (at z=0)
+
+HubbleParam = 0.68      # Hubble paramater (may be used for power spec parameterization)
+
+CoolingOn = 1
+StarformationOn = 1
+RadiationOn = 1
+HydroOn = 1
+DensityIndependentSphOn = 1 
+MetalReturnOn = 0 ## Set this to 0 for PRIYA.
+BlackHoleOn = 1 ## also on. 
+WindOn = 1 ## Should be on! 
+StarformationCriterion = density #,h2
+MassiveNuLinRespOn = 0 # For neutrinos.
+MetalCoolFile = ../cooling_metal_UVB
+
+SnapshotWithFOF = 1 # Don't know if necessary
+FOFHaloLinkingLength = 0.2
+FOFHaloMinLength = 32
+
+MinGasTemp = 5.0
+
+#  Further parameters of SPH
+#  #Only kernel supported by fake_spectra
+DensityKernelType = cubic
+InitGasTemp = 270.
+MinGasTemp = 100
+
+#---------Reionization params---------
+QSOLightupOn=1 # Turn off if box size < 60 cMpc/h
+QSOMeanBubble = 20000
+QSOVarBubble = 0
+QSOHeIIIReionFinishFrac = 0.995
+QSOMinMass = 100
+ReionHistFile = HeIIReion_PRIYA_BOSS_bf.txt
+UVFluctuationFile = UVFluctuationFile
+HIReionTemp = 15000 # K temp
+
+#----------------------BH Stuff-------------------------
+BlackHoleKineticOn = 1 # switch to kinetic feedback mode when the BH accretion rate is low
+
+BlackHoleNgbFactor = 2.0
+
+TimeBetweenSeedingSearch = 1.03
+WriteBlackHoleDetails = 1
+
+BlackHoleRepositionEnabled = 0
+BH_DRAG = 0
+BH_DynFrictionMethod = 2
+BlackHoleFeedbackFactor = 0.05
+BlackHoleFeedbackMethod = spline | mass
+Generations = 1
+SeedBHDynMass =-1
+MinFoFMassForNewSeed = 5
+MinMStarForNewSeed = 0.2
+SeedBlackHoleMass = 5e-05
+MaxSeedBlackHoleMass = -1
+SeedBlackHoleMassIndex = -2
+BlackHoleAccretionFactor = 100.0
+BlackHoleEddingtonFactor = 2.1
+BlackHoleFeedbackRadius = 3.0
+
+#---------------------Wind-Stuff---------------
+WindModel = ofjt10 #,isotropic
+WindEfficiency = 2.0 # Default
+WindEnergyFraction = 1.0 # Default
+WindSigma0 = 353.0 #km/s Default
+WindSpeedFactor = 3.7 # Default
+
+WindFreeTravelLength = 1000
+WindFreeTravelDensFac = 0.1
+MaxWindFreeTravelTime = 60
+MinWindVelocity = 100
+Generations = 1
