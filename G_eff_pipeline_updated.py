@@ -102,7 +102,7 @@ def _base_ini_content(A_s, n_s, h, log10_G_eff_nu=None):
         ## Output parameters
         output = dTk vTk mPk
         root = {root_value}
-        P_k_max_h/Mpc = 250.0
+        P_k_max_h/Mpc = 321.6990877275948
         z_max_pk = 100.0
         z_pk = 99.0, 4.0, 3.0, 2.0
         extra metric transfer functions = y
@@ -205,7 +205,7 @@ def create_paramfile_gadget(pk_filename, tk_filename, A_s, n_s, h):
     Omega_g = 4.480075654158969e-07 * T_CMB**4 / h**2
     Omega_b = 0.0224 / (h**2)
     Omega_cdm = 0.12 / (h**2)
-    Omega_0  = 0.1424
+    Omega_0  = 0.1424 / (h**2) ## Total matter density from CLASS .ini file.
     Omega_ur = 0.0
 
     Omega_Lambda = 1 - Omega_fld - Omega_0 - Omega_g - Omega_ur
@@ -370,8 +370,8 @@ if __name__ == "__main__":
     lcdm_planck_pk_file  = "lcdm_planck_z1_pk.dat" ## This is the file with the Planck 2018 data for P(k).
 
     #Step 3: Plot Pk files compared to LCDM
-    plot_pk_files_matching(geff_pk_file, lcdm_pk_file, args.log10_G_eff_nu, scale = True)
-    plot_pk_files_matching(geff_pk_file, lcdm_planck_pk_file, args.log10_G_eff_nu, scale=False)
+    #plot_pk_files_matching(geff_pk_file, lcdm_pk_file, args.log10_G_eff_nu, scale = True)
+    #plot_pk_files_matching(geff_pk_file, lcdm_planck_pk_file, args.log10_G_eff_nu, scale=False)
 
     # Step 4: Create paramfiles for MP-Gadget
-    create_paramfile_gadget(geff_pk_file, geff_tk_file, args.A_s, args.n_s, args.h, args.log10_G_eff_nu)
+    create_paramfile_gadget(geff_pk_file, geff_tk_file, args.A_s, args.n_s, args.h)
