@@ -61,7 +61,7 @@ WriteBlackHoleDetails = 1
 
 BlackHoleRepositionEnabled = 0
 BH_DRAG = 0
-BH_DynFrictionMethod = 2
+BH_DynFrictionMethod = 1 ## Changed from 2
 BlackHoleFeedbackFactor = 0.05
 BlackHoleFeedbackMethod = spline | mass
 Generations = 1
